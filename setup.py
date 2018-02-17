@@ -7,6 +7,7 @@ with open('README.rst') as f:
     readme = f.read()
 
 requirements = [
+    'python-etcd',
 ]
 
 setup_requirements = [
@@ -37,4 +38,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     setup_requires=setup_requirements,
+    entry_points={
+        "console_scripts": ["etcdfs = etcdfs.etcdfs:main"],
+    }
 )
