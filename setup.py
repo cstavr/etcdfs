@@ -7,6 +7,7 @@ with open('README.rst') as f:
     readme = f.read()
 
 requirements = [
+    'fusepy',
     'python-etcd',
 ]
 
