@@ -8,6 +8,7 @@ with open('README.rst') as f:
 
 requirements = [
     'fusepy',
+    'boltons',
     'python-etcd',
 ]
 
