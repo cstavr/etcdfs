@@ -7,7 +7,7 @@ About
 
 ``etcdfs`` is a simple FUSE filesystem based on etcd. It allows you to mount
 the key space of an etcd cluster as a filesystem. It is written in Python,
-using `pyfuse <https://github.com/nrclark/pyfuse>`_, the Python bindings
+using `Pyfuse <https://github.com/nrclark/pyfuse>`_, the Python bindings
 for `libfuse <http://github.com/libfuse/libfuse>`_, and `python-etcd
 <https://github.com/jplana/python-etcd>`_.
 
