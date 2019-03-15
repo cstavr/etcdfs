@@ -10,10 +10,14 @@ import etcd
 import errno
 import logging
 import argparse
-import urlparse
 import posixpath
 from boltons.funcutils import wraps
 from fuse import FUSE, Operations, LoggingMixIn, FuseOSError
+
+try:
+    import urllib.parse as urlparse
+except ImportError:
+    import urlparse
 
 log = logging.getLogger(__name__)
 fuselog = logging.getLogger("fuse.log-mixin")
@@ -26,8 +30,8 @@ LOG_FORMAT = ("%(asctime)-15s etcdfs pid=%(process)d "
 ETCD_CODE_TO_ERRNO = {
     # EtcdKeyNotFound
     100: errno.ENOENT,
-    # EtcdCompareFailed
-    101: errno.EBADFD,
+    # EtcdCompareFailed (unused)
+    # # 101: errno.EBADFD,
     # EtcdNotFile
     102: errno.EISDIR,
     # EtcdNotDir
